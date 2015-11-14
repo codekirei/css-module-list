@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha",
     "get-latest": "npm search '/^postcss-/' | awk '{ print $1 }' | tail -n +2 > latest.txt",
-    "diff": "node bin/diff.js"
+    "diff": "node bin/diff.js",
+    "replace": "rm all-modules.txt; mv latest.txt all-modules.txt"
   },
   "keywords": [
     "postcss",
@@ -14,9 +15,10 @@
   ],
   "author": "Jacob Blakely (codekirei)",
   "license": "MIT",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "diff": "^2.2.1"
+    "diff": "^2.2.1",
+    "sequelize": "^3.13.0",
+    "sqlite3": "^3.1.1"
   }
 }
