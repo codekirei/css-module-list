@@ -104,21 +104,21 @@ biased towards:
 | postcss-simple-grid             | layout | n | use lost                      |
 | postcss-verthorz                | layout | n | prefer short-spacing          |
 | postcss-vertical-rhythm         | layout | y | smart vertical rhythm         |
-| postcss-zindex                  | layout | n |                               |
+| postcss-zindex                  | layout | n | rebase z-indices              |
 | rtlcss                          | layout | n | RTLify all styles             |
-| css-byebye                      | meta   |   |                               |
+| css-byebye                      | meta   | n | ignore rules                  |
 | cssfmt                          | meta   | n | prettifier                    |
-| immutable-css                   | meta   |   | protect rules                 |
-| list-selectors                  | meta   |   | list all selectors            |
-| perfectionist                   | meta   |   | prettifier/minifier           |
+| immutable-css                   | meta   | y | protect rules                 |
+| list-selectors                  | meta   | n | prefer cssstats               |
+| perfectionist                   | meta   | n | prefer cleancss               |
 | postcss-bem-linter              | meta   | n | check for BEM conventions     |
 | postcss-browser-reporter        | meta   | n | in-browser plugin meta output |
-| postcss-cssstats                | meta   |   |                               |
+| postcss-cssstats                | meta   | y | advanced css stats webapp     |
 | postcss-raw                     | meta   | y | prevent parsing               |
 | postcss-regexp-detect           | meta   | y | search by regex               |
-| postcss-reporter                | meta   |   | console plugin meta output    |
+| postcss-reporter                | meta   | y | console plugin meta output    |
 | postcss-select                  | meta   | n | filter selectors              |
-| postcss-single-charset          | meta   | n |                               |
+| postcss-single-charset          | meta   | n | single @charset declaration   |
 | postcss-style-guide             | meta   | y | auto-generate style guide     |
 | css-mqpacker                    | mq     |   |                               |
 | mq4-hover-shim                  | mq     |   |                               |
@@ -187,9 +187,9 @@ categories:
 - [X] color
 - [X] compat   -- browser compatibility
 - [X] fund     -- fundamental language functionality
-- [ ] image
-- [ ] layout
-- [ ] meta     -- reporting / linting / minification
+- [X] image
+- [X] layout
+- [X] meta     -- reporting / linting / minification
 - [ ] mq       -- media queries
 - [ ] prop     -- properties
 - [ ] sel      -- selectors
