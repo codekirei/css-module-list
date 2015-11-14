@@ -4,6 +4,7 @@ Current 11/13/2015
 biased towards:
   - unique functionality
   - simple syntax
+  - not easily implemented with a very simple mixin unless super convenient
   - good documentation
   - widely applicable
   - doing one thing well
@@ -90,19 +91,19 @@ biased towards:
 | postcss-svgo                    | image  | y | optimize inline svg           |
 | postcss-write-svg               | image  | y | nicer svg syntax              |
 | webpcss                         | image  | y | background image -> webp      |
-| lost                            | layout |   |                               |
-| postcss-center                  | layout |   |                               |
-| postcss-clearfix                | layout |   |                               |
-| postcss-flexbugs-fixes          | layout |   | fix flexbox foibles           |
-| postcss-grid                    | layout |   |                               |
-| postcss-neat                    | layout |   |                               |
-| postcss-position                | layout |   |                               |
+| lost                            | layout | y | the grid                      |
+| postcss-center                  | layout | n | prefer DIY                    |
+| postcss-clearfix                | layout | y | clearfix!                     |
+| postcss-flexbugs-fixes          | layout | n | fix flexbox foibles           |
+| postcss-grid                    | layout | n | use lost                      |
+| postcss-neat                    | layout | n | use lost                      |
+| postcss-position                | layout | n | prefer short-position         |
 | postcss-pxtorem                 | layout | n | px -> rem                     |
-| postcss-short-position          | layout |   |                               |
-| postcss-short-spacing           | layout |   |                               |
-| postcss-simple-grid             | layout |   |                               |
-| postcss-verthorz                | layout |   |                               |
-| postcss-vertical-rhythm         | layout |   |                               |
+| postcss-short-position          | layout | y | shorthand position            |
+| postcss-short-spacing           | layout | y | shorthand margin/padding      |
+| postcss-simple-grid             | layout | n | use lost                      |
+| postcss-verthorz                | layout | n | prefer short-spacing          |
+| postcss-vertical-rhythm         | layout | y | smart vertical rhythm         |
 | postcss-zindex                  | layout | n |                               |
 | rtlcss                          | layout | n | RTLify all styles             |
 | css-byebye                      | meta   |   |                               |
@@ -199,6 +200,14 @@ categories:
 - postcss-meta-charset
   - insert manually at top of first file
   - throw if @charset is found anywhere else
+
+- flexbugs
+  - https://github.com/philipwalton/flexbugs
+  - does postcss-flexbugs-fixes cover this?
+
+- centering mixin
+  - e.g. postcss-center
+  - text
 
 - postcss-responsive-images
   - just write a rule in the reset
