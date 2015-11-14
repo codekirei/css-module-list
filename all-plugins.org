@@ -35,8 +35,8 @@ biased towards:
 | postcss-hexrgba                 | color  | n | use color-alpha               |
 | postcss-rgb-plz                 | color  | n | #abc -> rgb(1,2,3)            |
 | postcss-rgba-hex                | color  | n | rgba(1,2,3,.1) => #abc        |
-| postcss-short-color             | color  | y | set bg color with color       |
 | postcss-shades-of-gray          | color  | n | limit gray shades             |
+| postcss-short-color             | color  | y | set bg color with color       |
 | autoprefixer                    | compat | y | vendor prefixes               |
 | css2modernizr                   | compat | n | which modernizr tests to use  |
 | cssgrace                        | compat | n | multiple utilities in one     |
@@ -58,18 +58,18 @@ biased towards:
 | postcss-will-change             | compat | y | 3d acceleration               |
 | stylehacks                      | compat | n | remove compat hacks           |
 | csstyle                         | fund   | n | fancy naming conventions      |
+| postcss-advanced-variables      | fund   | n | vars and @ rules              |
 | postcss-alias-atrules           | fund   | y | alias @                       |
 | postcss-at-rules-variables      | fund   | n | @if, @for, @each, @else       |
 | postcss-conditionals            | fund   | y | @if, @else                    |
+| postcss-constants               | fund   | n | simple-vars does this         |
 | postcss-css-variables           | fund   | n | future css style vars         |
-| postcss-advanced-variables      | fund   | n | vars and @ rules              |
 | postcss-each                    | fund   | y | @each                         |
 | postcss-extend                  | fund   | n | prefer simple-extend          |
 | postcss-for                     | fund   | y | @for                          |
 | postcss-functions               | fund   | y | inject JS functions           |
 | postcss-generate-preset         | fund   | y | expand into multiple rules    |
 | postcss-import                  | fund   | y | @import                       |
-| postcss-constants               | fund   | n | simple-vars does this         |
 | postcss-map                     | fund   | n | wip                           |
 | postcss-match                   | fund   | y | @match                        |
 | postcss-mixins                  | fund   | y | @mixin                        |
@@ -79,18 +79,17 @@ biased towards:
 | postcss-sassy-mixins            | fund   | n | use postcss-mixins            |
 | postcss-simple-extend           | fund   | y | @extend                       |
 | postcss-simple-vars             | fund   | y | variables                     |
-| postcss-at2x                    | image  |   |                               |
-| postcss-image-inliner           | image  |   |                               |
-| postcss-image-set               | image  |   |                               |
-| postcss-inline-svg              | image  |   |                               |
-| postcss-instagram               | image  |   |                               |
-| postcss-responsive-images       | image  |   |                               |
-| postcss-sgvo                    | image  |   |                               |
-| postcss-sprites                 | image  |   |                               |
-| postcss-svg                     | image  |   |                               |
-| postcss-svg-fallback            | image  |   |                               |
-| postcss-write-svg               | image  |   |                               |
-| webpcss                         | image  |   |                               |
+| postcss-at2x                    | image  | n |                               |
+| postcss-image-set               | image  | n |                               |
+| postcss-inline-svg              | image  | y | inline svg                    |
+| postcss-instagram               | image  | n | cool filters                  |
+| postcss-responsive-images       | image  | n | general css rules             |
+| postcss-sprites                 | image  | n | should implement              |
+| postcss-svg                     | image  | n | prefer write-svg              |
+| postcss-svg-fallback            | image  | n | see custom rules              |
+| postcss-svgo                    | image  | y | optimize inline svg           |
+| postcss-write-svg               | image  | y | nicer svg syntax              |
+| webpcss                         | image  | y | background image -> webp      |
 | lost                            | layout |   |                               |
 | postcss-center                  | layout |   |                               |
 | postcss-clearfix                | layout |   |                               |
@@ -118,8 +117,8 @@ biased towards:
 | postcss-regexp-detect           | meta   | y | search by regex               |
 | postcss-reporter                | meta   |   | console plugin meta output    |
 | postcss-select                  | meta   | n | filter selectors              |
-| postcss-style-guide             | meta   | y | auto-generate style guide     |
 | postcss-single-charset          | meta   | n |                               |
+| postcss-style-guide             | meta   | y | auto-generate style guide     |
 | css-mqpacker                    | mq     |   |                               |
 | mq4-hover-shim                  | mq     |   |                               |
 | postcss-custom-media            | mq     |   |                               |
@@ -178,24 +177,37 @@ biased towards:
 | postcss-assets-rebase           | url    |   |                               |
 | postcss-copy-assets             | url    |   |                               |
 | postcss-data-packer             | url    |   |                               |
+| postcss-image-inliner           | url    | n | b64 increases file size       |
 | postcss-url                     | url    |   |                               |
 | postcss-urlrev                  | url    |   |                               |
 |---------------------------------+--------+---+-------------------------------|
 
-C- good documentationategories:
--- good documentation- doing one thing well [X] color
--- good documentation- doing one thing well [X] compat   -- browser compatibility
--- good documentation- doing one thing well [X] fund     -- fundamental language functionality
--- good documentation- doing one thing well [ ] image
--- good documentation- doing one thing well [ ] layout
--- good documentation- doing one thing well [ ] meta     -- reporting / linting / minification
--- good documentation- doing one thing well [ ] mq       -- media queries
--- good documentation- doing one thing well [ ] prop     -- properties
--- good documentation- doing one thing well [ ] sel      -- selectors
--- doing one thing well [ ] text
+categories:
+- [X] color
+- [X] compat   -- browser compatibility
+- [X] fund     -- fundamental language functionality
+- [ ] image
+- [ ] layout
+- [ ] meta     -- reporting / linting / minification
+- [ ] mq       -- media queries
+- [ ] prop     -- properties
+- [ ] sel      -- selectors
+- [ ] text
 - [ ] url      -- deal with url() includes
 
 // rules to write
 - postcss-meta-charset
   - insert manually at top of first file
   - throw if @charset is found anywhere else
+
+- postcss-responsive-images
+  - just write a rule in the reset
+
+- svg sprite sheet?
+
+- http://soqr.fr/testsvg/svg-inside-img.php
+
+- inlining urls vs separate HTTP requests:
+  - converting an image to base64 significantly increases filesize
+  - inlining an image saves HTTP requests
+  - solution: if you have lots of small images, use a spritesheet instead
