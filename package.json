@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "get-latest": "npm search '/^postcss-/' | awk '{ print $1 }' | tail -n +2 > latest.txt"
+    "get-latest": "npm search '/^postcss-/' | awk '{ print $1 }' | tail -n +2 > latest.txt",
+    "diff": "node bin/diff.js"
   },
   "keywords": [
     "postcss",
@@ -14,5 +15,8 @@
   "author": "Jacob Blakely (codekirei)",
   "license": "MIT",
   "dependencies": {
+  },
+  "devDependencies": {
+    "diff": "^2.2.1"
   }
 }
