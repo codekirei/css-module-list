@@ -4,7 +4,9 @@ Current 11/13/2015
 biased towards:
   - unique functionality
   - simple syntax
+  - good documentation
   - widely applicable
+  - doing one thing well
 
 |---------------------------------+--------+---+-------------------------------|
 | Name                            | Cat    | ? | Notes                         |
@@ -56,26 +58,27 @@ biased towards:
 | postcss-will-change             | compat | y | 3d acceleration               |
 | stylehacks                      | compat | n | remove compat hacks           |
 | csstyle                         | fund   | n | fancy naming conventions      |
-| postcss-alias-atrules           | fund   |   | alias @                       |
-| postcss-at-rules-variables      | fund   |   | @if, @for, @each              |
-| postcss-conditionals            | fund   |   | @if                           |
-| postcss-css-variables           | fund   |   |                               |
-| postcss-each                    | fund   |   | @each                         |
-| postcss-extend                  | fund   |   |                               |
-| postcss-for                     | fund   |   | @for                          |
-| postcss-functions               | fund   |   |                               |
-| postcss-generate-preset         | fund   | y |                               |
-| postcss-import                  | fund   |   |                               |
-| postcss-local-constants         | fund   |   | read const from file          |
+| postcss-alias-atrules           | fund   | y | alias @                       |
+| postcss-at-rules-variables      | fund   | n | @if, @for, @each, @else       |
+| postcss-conditionals            | fund   | y | @if, @else                    |
+| postcss-css-variables           | fund   | n | future css style vars         |
+| postcss-advanced-variables      | fund   | n | vars and @ rules              |
+| postcss-each                    | fund   | y | @each                         |
+| postcss-extend                  | fund   | n | prefer simple-extend          |
+| postcss-for                     | fund   | y | @for                          |
+| postcss-functions               | fund   | y | inject JS functions           |
+| postcss-generate-preset         | fund   | y | expand into multiple rules    |
+| postcss-import                  | fund   | y | @import                       |
+| postcss-constants               | fund   | n | simple-vars does this         |
 | postcss-map                     | fund   | n | wip                           |
-| postcss-match                   | fund   |   | @match                        |
-| postcss-mixins                  | fund   |   |                               |
-| postcss-nested-vars             | fund   |   | variable scoping              |
-| postcss-partial-import          | fund   |   |                               |
-| postcss-reference               | fund   |   |                               |
-| postcss-sasy-mixins             | fund   |   |                               |
-| postcss-simple-extend           | fund   |   |                               |
-| postcss-simple-vars             | fund   |   |                               |
+| postcss-match                   | fund   | y | @match                        |
+| postcss-mixins                  | fund   | y | @mixin                        |
+| postcss-nested-vars             | fund   | n | variable scoping              |
+| postcss-partial-import          | fund   | n | use postcss-import            |
+| postcss-reference               | fund   | n | less-style @reference         |
+| postcss-sassy-mixins            | fund   | n | use postcss-mixins            |
+| postcss-simple-extend           | fund   | y | @extend                       |
+| postcss-simple-vars             | fund   | y | variables                     |
 | postcss-at2x                    | image  |   |                               |
 | postcss-image-inliner           | image  |   |                               |
 | postcss-image-set               | image  |   |                               |
@@ -179,18 +182,18 @@ biased towards:
 | postcss-urlrev                  | url    |   |                               |
 |---------------------------------+--------+---+-------------------------------|
 
-Categories:
-- color
-- compat   -- browser compatibility
-- fund     -- fundamental language functionality
-- image
-- layout
-- meta     -- reporting / linting / minification
-- mq       -- media queries
-- prop     -- properties
-- sel      -- selectors
-- text
-- url      -- deal with url() includes
+C- good documentationategories:
+-- good documentation- doing one thing well [X] color
+-- good documentation- doing one thing well [X] compat   -- browser compatibility
+-- good documentation- doing one thing well [X] fund     -- fundamental language functionality
+-- good documentation- doing one thing well [ ] image
+-- good documentation- doing one thing well [ ] layout
+-- good documentation- doing one thing well [ ] meta     -- reporting / linting / minification
+-- good documentation- doing one thing well [ ] mq       -- media queries
+-- good documentation- doing one thing well [ ] prop     -- properties
+-- good documentation- doing one thing well [ ] sel      -- selectors
+-- doing one thing well [ ] text
+- [ ] url      -- deal with url() includes
 
 // rules to write
 - postcss-meta-charset
