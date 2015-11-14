@@ -4,12 +4,15 @@
   "description": "an opinionated collection of PostCSS plugins",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "list": ""
   },
   "keywords": [
     "postcss",
     "css"
   ],
   "author": "Jacob Blakely (codekirei)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+  }
 }
