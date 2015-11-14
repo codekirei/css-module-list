@@ -38,9 +38,9 @@ biased towards:
 | autoprefixer                    | compat | y | vendor prefixes               |
 | css2modernizr                   | compat | n | which modernizr tests to use  |
 | cssgrace                        | compat | n | multiple utilities in one     |
-| doiuse                          | compat |   | check for xb compatibility    |
+| doiuse                          | compat | y | check for xb compatibility    |
 | pixrem                          | compat | y | rem -> px for IE<11           |
-| postcss-color-rgba-fallback     | compat |   |                               |
+| postcss-color-rgba-fallback     | compat | n | rgba -> #abc for IE<9         |
 | postcss-epub                    | compat | n |                               |
 | postcss-fallback                | compat | y | declare fallback in prop      |
 | postcss-flexboxfixer            | compat | n | old school -webkit- flexbox   |
@@ -50,10 +50,10 @@ biased towards:
 | postcss-opacity                 | compat | n | for IE<9                      |
 | postcss-pseudoelements          | compat | n | ::pseudo -> :pseudo           |
 | postcss-remove-prefixes         | compat | n | strip prefixes                |
-| postcss-round-subpixels         | compat |   |                               |
+| postcss-round-subpixels         | compat | y | 1.123px -> 1px                |
 | postcss-unmq                    | compat | n | for IE<9                      |
 | postcss-vmin                    | compat | n | vm -> vmin for IE9            |
-| postcss-will-change             | compat |   |                               |
+| postcss-will-change             | compat | y | 3d acceleration               |
 | stylehacks                      | compat | n | remove compat hacks           |
 | csstyle                         | fund   | n | fancy naming conventions      |
 | postcss-alias-atrules           | fund   |   | alias @                       |
@@ -116,6 +116,7 @@ biased towards:
 | postcss-reporter                | meta   |   | console plugin meta output    |
 | postcss-select                  | meta   | n | filter selectors              |
 | postcss-style-guide             | meta   | y | auto-generate style guide     |
+| postcss-single-charset          | meta   | n |                               |
 | css-mqpacker                    | mq     |   |                               |
 | mq4-hover-shim                  | mq     |   |                               |
 | postcss-custom-media            | mq     |   |                               |
@@ -146,13 +147,6 @@ biased towards:
 | postcss-strip-units             | prop   |   |                               |
 | postcss-transform-shortcut      | prop   |   |                               |
 | postcss-triangle                | prop   |   |                               |
-| postcss-assets                  | qol    |   |                               |
-| postcss-assets-rebase           | qol    |   |                               |
-| postcss-copy-assets             | qol    |   |                               |
-| postcss-data-packer             | qol    |   |                               |
-| postcss-single-charset          | qol    |   |                               |
-| postcss-url                     | qol    |   |                               |
-| postcss-urlrev                  | qol    |   |                               |
 | postcss-all-link-colors         | sel    | n | a:visited/focus/hover/active  |
 | postcss-atroot                  | sel    | y | @at-root                      |
 | postcss-bem                     | sel    | n | BEM selectors                 |
@@ -177,6 +171,12 @@ biased towards:
 | postcss-responsive-type         | text   |   |                               |
 | postcss-short-font-size         | text   |   |                               |
 | postcss-short-text              | text   |   |                               |
+| postcss-assets                  | url    |   |                               |
+| postcss-assets-rebase           | url    |   |                               |
+| postcss-copy-assets             | url    |   |                               |
+| postcss-data-packer             | url    |   |                               |
+| postcss-url                     | url    |   |                               |
+| postcss-urlrev                  | url    |   |                               |
 |---------------------------------+--------+---+-------------------------------|
 
 Categories:
@@ -190,3 +190,9 @@ Categories:
 - prop     -- properties
 - sel      -- selectors
 - text
+- url      -- deal with url() includes
+
+// rules to write
+- postcss-meta-charset
+  - insert manually at top of first file
+  - throw if @charset is found anywhere else
