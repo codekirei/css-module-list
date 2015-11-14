@@ -1,176 +1,182 @@
 List created from postcss.parts
 Current 11/13/2015
 
+biased towards:
+  - unique functionality
+  - simple syntax
+  - widely applicable
+
 |---------------------------------+--------+---+-------------------------------|
 | Name                            | Cat    | ? | Notes                         |
 |---------------------------------+--------+---+-------------------------------|
-| autoprefixer                    | compat | y | vendor prefixes               |
-| colorguard                      | color  |   |                               |
-| css-byebye                      | meta   |   |                               |
-| css-mqpacker                    | mq     |   |                               |
-| css2modernizr                   | compat | n | which modernizr tests to use  |
-| cssfmt                          | meta   | n | prettifier                    |
-| cssgrace                        | compat | n | multiple utilities in one     |
-| csstyle                         | fund   | n | fancy naming conventions      |
-| doiuse                          | compat |   | check for xb compatibility    |
-| font-magician                   | text   |   |                               |
-| immutable-css                   | meta   |   | protect rules                 |
-| list-selectors                  | meta   |   | list all selectors            |
-| lost                            | layout |   |                               |
-| mq4-hover-shim                  | mq     |   |                               |
-| perfectionist                   | meta   |   | prettifier/minifier           |
-| pixrem                          | compat | y | rem -> px for IE<11           |
-| postcss-alias                   | prop   |   | alias props                   |
-| postcss-alias-atrules           | fund   |   | alias @                       |
-| postcss-all-link-colors         | sel    | n | a:visited/focus/hover/active  |
-| postcss-apply                   | prop   |   | custom props                  |
-| postcss-ase-colors              | color  |   |                               |
-| postcss-assets                  | qol    |   |                               |
-| postcss-assets-rebase           | qol    |   |                               |
-| postcss-at-rules-variables      | fund   |   | @if, @for, @each              |
-| postcss-at2x                    | image  |   |                               |
-| postcss-atroot                  | sel    | y | @at-root                      |
-| postcss-autoreset               | prop   | n | reset each selector           |
-| postcss-bem                     | sel    | n | BEM selectors                 |
-| postcss-bem-linter              | meta   | n | check for BEM conventions     |
-| postcss-border                  | prop   |   |                               |
-| postcss-brand-colors            | color  |   |                               |
-| postcss-browser-reporter        | meta   | n | in-browser plugin meta output |
-| postcss-calc                    | prop   |   |                               |
-| postcss-center                  | layout |   |                               |
-| postcss-circle                  | prop   |   | shorthand for circle          |
-| postcss-class-prefix            | sel    | y | namespace selectors           |
-| postcss-clearfix                | layout |   |                               |
-| postcss-color-alpha             | color  |   |                               |
-| postcss-color-function          | color  |   |                               |
-| postcss-color-gray              | color  |   |                               |
-| postcss-color-hcl               | color  |   |                               |
-| postcss-color-hex-alpha         | color  |   |                               |
-| postcss-color-hexa              | color  |   |                               |
-| postcss-color-hwb               | color  |   |                               |
-| postcss-color-mix               | color  |   |                               |
-| postcss-color-palette           | color  |   |                               |
-| postcss-color-pantone           | color  |   |                               |
-| postcss-color-rebeccapurple     | color  |   |                               |
-| postcss-color-rgba-fallback     | compat |   |                               |
-| postcss-color-scale             | color  |   |                               |
-| postcss-color-short             | color  |   |                               |
-| postcss-color-yiq               | color  |   |                               |
-| postcss-colorblind              | color  |   |                               |
-| postcss-conditionals            | fund   |   | @if                           |
-| postcss-conic-gradient          | color  |   |                               |
-| postcss-contrast                | color  |   |                               |
-| postcss-copy-assets             | qol    |   |                               |
-| postcss-crip                    | prop   | n | many shorhand props           |
-| postcss-css-variables           | fund   |   |                               |
-| postcss-cssstats                | meta   |   |                               |
-| postcss-currency                | prop   | n | currencty name -> symbol      |
-| postcss-custom-media            | mq     |   |                               |
-| postcss-custom-properties       | prop   |   |                               |
-| postcss-custom-selectors        | sel    |   |                               |
-| postcss-data-packer             | qol    |   |                               |
-| postcss-default-unit            | prop   | n | add specified unit to nums    |
-| postcss-define-property         | prop   |   | custom props                  |
-| postcss-each                    | fund   |   | @each                         |
-| postcss-easings                 | prop   | y | better easing names           |
-| postcss-epub                    | compat | n |                               |
-| postcss-extend                  | fund   |   |                               |
-| postcss-fakeid                  | sel    | n | #foo -> [id="foo"]            |
-| postcss-fallback                | compat | y | declare fallback in prop      |
+| colorguard                      | color  | n |                               |
+| postcss-ase-colors              | color  | n | adobe swatch exchange support |
+| postcss-brand-colors            | color  | y |                               |
+| postcss-color-alpha             | color  | y | #rgb.a -> rgba()              |
+| postcss-color-function          | color  | n | color: color(...)             |
+| postcss-color-gray              | color  | n | gray() -> rgba()              |
+| postcss-color-hcl               | color  | n | hue/chroma/luminance          |
+| postcss-color-hex-alpha         | color  | n | use color-alpha               |
+| postcss-color-hexa              | color  | n | use color-alpha               |
+| postcss-color-hwb               | color  | n | hue/whiteness/blackness       |
+| postcss-color-mix               | color  | y | mix two colors                |
+| postcss-color-palette           | color  | y | better defaults               |
+| postcss-color-pantone           | color  | n | pantone -> rgb                |
+| postcss-color-rebeccapurple     | color  | y | respect                       |
+| postcss-color-scale             | color  | y | light/dark scale              |
+| postcss-color-short             | color  | n | use color-alpha               |
+| postcss-color-yiq               | color  | n | use postcss-contrast          |
+| postcss-colorblind              | color  | n | should implement this         |
+| postcss-conic-gradient          | color  | n |                               |
+| postcss-contrast                | color  | y | contrast font color           |
 | postcss-filter                  | color  | n | black/white filter            |
+| postcss-hexrgba                 | color  | n | use color-alpha               |
+| postcss-rgb-plz                 | color  | n | #abc -> rgb(1,2,3)            |
+| postcss-rgba-hex                | color  | n | rgba(1,2,3,.1) => #abc        |
+| postcss-short-color             | color  | y | set bg color with color       |
+| postcss-shades-of-gray          | color  | n | limit gray shades             |
+| autoprefixer                    | compat | y | vendor prefixes               |
+| css2modernizr                   | compat | n | which modernizr tests to use  |
+| cssgrace                        | compat | n | multiple utilities in one     |
+| doiuse                          | compat |   | check for xb compatibility    |
+| pixrem                          | compat | y | rem -> px for IE<11           |
+| postcss-color-rgba-fallback     | compat |   |                               |
+| postcss-epub                    | compat | n |                               |
+| postcss-fallback                | compat | y | declare fallback in prop      |
 | postcss-flexboxfixer            | compat | n | old school -webkit- flexbox   |
-| postcss-flexbugs-fixes          | layout |   | fix flexbox foibles           |
-| postcss-focus                   | sel    | n | :hover += :focus              |
-| postcss-font-pack               | text   |   |                               |
-| postcss-font-variant            | text   |   |                               |
-| postcss-fontpath                | text   |   |                               |
+| postcss-gradientfixer           | compat | n | old school -webkit- gradients |
+| postcss-initial                 | compat | n | 'inital' keyword fallback     |
+| postcss-mqwidth-to-class        | compat | n | for IE<9                      |
+| postcss-opacity                 | compat | n | for IE<9                      |
+| postcss-pseudoelements          | compat | n | ::pseudo -> :pseudo           |
+| postcss-remove-prefixes         | compat | n | strip prefixes                |
+| postcss-round-subpixels         | compat |   |                               |
+| postcss-unmq                    | compat | n | for IE<9                      |
+| postcss-vmin                    | compat | n | vm -> vmin for IE9            |
+| postcss-will-change             | compat |   |                               |
+| stylehacks                      | compat | n | remove compat hacks           |
+| csstyle                         | fund   | n | fancy naming conventions      |
+| postcss-alias-atrules           | fund   |   | alias @                       |
+| postcss-at-rules-variables      | fund   |   | @if, @for, @each              |
+| postcss-conditionals            | fund   |   | @if                           |
+| postcss-css-variables           | fund   |   |                               |
+| postcss-each                    | fund   |   | @each                         |
+| postcss-extend                  | fund   |   |                               |
 | postcss-for                     | fund   |   | @for                          |
 | postcss-functions               | fund   |   |                               |
 | postcss-generate-preset         | fund   | y |                               |
-| postcss-gradientfixer           | compat | n | old school -webkit- gradients |
-| postcss-grid                    | layout |   |                               |
-| postcss-hexrgba                 | color  |   |                               |
-| postcss-host                    | sel    | n | shadow DOM :host              |
-| postcss-image-inliner           | image  |   |                               |
-| postcss-image-set               | image  |   |                               |
 | postcss-import                  | fund   |   |                               |
-| postcss-increase-specificity    | sel    | n | use class-prefix instead      |
-| postcss-initial                 | compat | n | 'inital' keyword fallback     |
-| postcss-inline-svg              | image  |   |                               |
-| postcss-input-style             | sel    | n |                               |
-| postcss-instagram               | image  |   |                               |
 | postcss-local-constants         | fund   |   | read const from file          |
-| postcss-logical-properties      | prop   | n | left/right -> start/end (LTR) |
 | postcss-map                     | fund   | n | wip                           |
 | postcss-match                   | fund   |   | @match                        |
-| postcss-media-minmax            | mq     | y | add <= and >=                 |
-| postcss-media-variables         | mq     | n | vars in mqs                   |
 | postcss-mixins                  | fund   |   |                               |
-| postcss-modular-scale           | prop   | y | ms()                          |
-| postcss-mq-keyframes            | mq     | n | move keyframes out of MQs     |
-| postcss-mqwidth-to-class        | compat | n | for IE<9                      |
-| postcss-neat                    | layout |   |                               |
-| postcss-nested                  | sel    |   | nested selectors              |
-| postcss-nested-props            | prop   |   | nested properties             |
 | postcss-nested-vars             | fund   |   | variable scoping              |
-| postcss-opacity                 | compat | n | for IE<9                      |
 | postcss-partial-import          | fund   |   |                               |
-| postcss-position                | layout |   |                               |
-| postcss-property-lookup         | prop   | y | lookup sibling prop           |
-| postcss-pseudo-class-any-link   | sel    | n | add :any-link                 |
-| postcss-pseudo-class-enter      | sel    | n | :focus + :hover = :enter      |
-| postcss-pseudo-content-insert   | prop   | n | auto-insert content: ''       |
-| postcss-pseudo-elements-content | prop   | n | auto-insert content: ''       |
-| postcss-pseudoelements          | compat | n | ::pseudo -> :pseudo           |
-| postcss-pxtorem                 | layout | n | px -> rem                     |
-| postcss-quantity-queries        | sel    |   | at-least, at-most, between... |
-| postcss-raw                     | meta   | y | prevent parsing               |
 | postcss-reference               | fund   |   |                               |
-| postcss-regexp-detect           | meta   | y | search by regex               |
-| postcss-remove-prefixes         | compat | n | strip prefixes                |
-| postcss-reporter                | meta   |   | console plugin meta output    |
-| postcss-responsive-images       | image  |   |                               |
-| postcss-responsive-type         | text   |   |                               |
-| postcss-reverse-media           | mq     |   |                               |
-| postcss-rgb-plz                 | color  |   |                               |
-| postcss-rgba-hex                | color  |   |                               |
-| postcss-round-subpixels         | compat |   |                               |
 | postcss-sasy-mixins             | fund   |   |                               |
-| postcss-scopify                 | sel    | n | use class-prefix instead      |
-| postcss-select                  | meta   | n | filter selectors              |
-| postcss-selector-matches        | sel    | y | add :matches()                |
-| postcss-selector-not            | sel    | y | add :not                      |
-| postcss-sgvo                    | image  |   |                               |
-| postcss-shades-of-gray          | color  |   |                               |
-| postcss-short-font-size         | text   |   |                               |
-| postcss-short-position          | layout |   |                               |
-| postcss-short-spacing           | layout |   |                               |
-| postcss-short-text              | text   |   |                               |
-| postcss-shorthand-expand        | prop   | n | expand shorthand props        |
 | postcss-simple-extend           | fund   |   |                               |
-| postcss-simple-grid             | layout |   |                               |
 | postcss-simple-vars             | fund   |   |                               |
-| postcss-single-charset          | qol    |   |                               |
-| postcss-size                    | prop   |   |                               |
+| postcss-at2x                    | image  |   |                               |
+| postcss-image-inliner           | image  |   |                               |
+| postcss-image-set               | image  |   |                               |
+| postcss-inline-svg              | image  |   |                               |
+| postcss-instagram               | image  |   |                               |
+| postcss-responsive-images       | image  |   |                               |
+| postcss-sgvo                    | image  |   |                               |
 | postcss-sprites                 | image  |   |                               |
-| postcss-strip-units             | prop   |   |                               |
-| postcss-style-guide             | meta   | y | auto-generate style guide     |
 | postcss-svg                     | image  |   |                               |
 | postcss-svg-fallback            | image  |   |                               |
-| postcss-transform-shortcut      | prop   |   |                               |
-| postcss-triangle                | prop   |   |                               |
-| postcss-unmq                    | compat | n | for IE<9                      |
-| postcss-url                     | qol    |   |                               |
-| postcss-urlrev                  | qol    |   |                               |
+| postcss-write-svg               | image  |   |                               |
+| webpcss                         | image  |   |                               |
+| lost                            | layout |   |                               |
+| postcss-center                  | layout |   |                               |
+| postcss-clearfix                | layout |   |                               |
+| postcss-flexbugs-fixes          | layout |   | fix flexbox foibles           |
+| postcss-grid                    | layout |   |                               |
+| postcss-neat                    | layout |   |                               |
+| postcss-position                | layout |   |                               |
+| postcss-pxtorem                 | layout | n | px -> rem                     |
+| postcss-short-position          | layout |   |                               |
+| postcss-short-spacing           | layout |   |                               |
+| postcss-simple-grid             | layout |   |                               |
 | postcss-verthorz                | layout |   |                               |
 | postcss-vertical-rhythm         | layout |   |                               |
-| postcss-vmin                    | compat | n | vm -> vmin for IE9            |
-| postcss-will-change             | compat |   |                               |
-| postcss-write-svg               | image  |   |                               |
 | postcss-zindex                  | layout | n |                               |
 | rtlcss                          | layout | n | RTLify all styles             |
-| stylehacks                      | compat | n | remove compat hacks           |
-| webpcss                         | image  |   |                               |
+| css-byebye                      | meta   |   |                               |
+| cssfmt                          | meta   | n | prettifier                    |
+| immutable-css                   | meta   |   | protect rules                 |
+| list-selectors                  | meta   |   | list all selectors            |
+| perfectionist                   | meta   |   | prettifier/minifier           |
+| postcss-bem-linter              | meta   | n | check for BEM conventions     |
+| postcss-browser-reporter        | meta   | n | in-browser plugin meta output |
+| postcss-cssstats                | meta   |   |                               |
+| postcss-raw                     | meta   | y | prevent parsing               |
+| postcss-regexp-detect           | meta   | y | search by regex               |
+| postcss-reporter                | meta   |   | console plugin meta output    |
+| postcss-select                  | meta   | n | filter selectors              |
+| postcss-style-guide             | meta   | y | auto-generate style guide     |
+| css-mqpacker                    | mq     |   |                               |
+| mq4-hover-shim                  | mq     |   |                               |
+| postcss-custom-media            | mq     |   |                               |
+| postcss-media-minmax            | mq     | y | add <= and >=                 |
+| postcss-media-variables         | mq     | n | vars in mqs                   |
+| postcss-mq-keyframes            | mq     | n | move keyframes out of MQs     |
+| postcss-reverse-media           | mq     |   |                               |
+| postcss-alias                   | prop   |   | alias props                   |
+| postcss-apply                   | prop   |   | custom props                  |
+| postcss-autoreset               | prop   | n | reset each selector           |
+| postcss-border                  | prop   |   |                               |
+| postcss-calc                    | prop   |   |                               |
+| postcss-circle                  | prop   |   | shorthand for circle          |
+| postcss-crip                    | prop   | n | many shorhand props           |
+| postcss-currency                | prop   | n | currencty name -> symbol      |
+| postcss-custom-properties       | prop   |   |                               |
+| postcss-default-unit            | prop   | n | add specified unit to nums    |
+| postcss-define-property         | prop   |   | custom props                  |
+| postcss-easings                 | prop   | y | better easing names           |
+| postcss-logical-properties      | prop   | n | left/right -> start/end (LTR) |
+| postcss-modular-scale           | prop   | y | ms()                          |
+| postcss-nested-props            | prop   |   | nested properties             |
+| postcss-property-lookup         | prop   | y | lookup sibling prop           |
+| postcss-pseudo-content-insert   | prop   | n | auto-insert content: ''       |
+| postcss-pseudo-elements-content | prop   | n | auto-insert content: ''       |
+| postcss-shorthand-expand        | prop   | n | expand shorthand props        |
+| postcss-size                    | prop   |   |                               |
+| postcss-strip-units             | prop   |   |                               |
+| postcss-transform-shortcut      | prop   |   |                               |
+| postcss-triangle                | prop   |   |                               |
+| postcss-assets                  | qol    |   |                               |
+| postcss-assets-rebase           | qol    |   |                               |
+| postcss-copy-assets             | qol    |   |                               |
+| postcss-data-packer             | qol    |   |                               |
+| postcss-single-charset          | qol    |   |                               |
+| postcss-url                     | qol    |   |                               |
+| postcss-urlrev                  | qol    |   |                               |
+| postcss-all-link-colors         | sel    | n | a:visited/focus/hover/active  |
+| postcss-atroot                  | sel    | y | @at-root                      |
+| postcss-bem                     | sel    | n | BEM selectors                 |
+| postcss-class-prefix            | sel    | y | namespace selectors           |
+| postcss-custom-selectors        | sel    |   |                               |
+| postcss-fakeid                  | sel    | n | #foo -> [id="foo"]            |
+| postcss-focus                   | sel    | n | :hover += :focus              |
+| postcss-host                    | sel    | n | shadow DOM :host              |
+| postcss-increase-specificity    | sel    | n | use class-prefix instead      |
+| postcss-input-style             | sel    | n |                               |
+| postcss-nested                  | sel    |   | nested selectors              |
+| postcss-pseudo-class-any-link   | sel    | n | add :any-link                 |
+| postcss-pseudo-class-enter      | sel    | n | :focus + :hover = :enter      |
+| postcss-quantity-queries        | sel    |   | at-least, at-most, between... |
+| postcss-scopify                 | sel    | n | use class-prefix instead      |
+| postcss-selector-matches        | sel    | y | add :matches()                |
+| postcss-selector-not            | sel    | y | add :not                      |
+| font-magician                   | text   |   |                               |
+| postcss-font-pack               | text   |   |                               |
+| postcss-font-variant            | text   |   |                               |
+| postcss-fontpath                | text   |   |                               |
+| postcss-responsive-type         | text   |   |                               |
+| postcss-short-font-size         | text   |   |                               |
+| postcss-short-text              | text   |   |                               |
 |---------------------------------+--------+---+-------------------------------|
 
 Categories:
