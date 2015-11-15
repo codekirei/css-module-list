@@ -1,3 +1,0 @@
-- [ ] make react site that interacts with sqlite db for editing entries
-- [ ] make script that dumps sqlite to json
-- [ ] make static site that reads json output
