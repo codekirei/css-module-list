@@ -131,7 +131,6 @@ biased towards:
 | postcss-apply                   | prop   | n | prefer define-property        |
 | postcss-autoreset               | prop   | n | reset each selector           |
 | postcss-border                  | prop   | n | prefer shorthand-border       |
-| postcss-short-border            | prop   | y | border prop shorhand          |
 | postcss-calc                    | prop   | y | eval calc when possible       |
 | postcss-circle                  | prop   | y | shorthand for circle          |
 | postcss-crip                    | prop   | n | many shorhand props           |
@@ -146,9 +145,10 @@ biased towards:
 | postcss-property-lookup         | prop   | y | lookup sibling prop           |
 | postcss-pseudo-content-insert   | prop   | n | auto-insert content: ''       |
 | postcss-pseudo-elements-content | prop   | n | auto-insert content: ''       |
+| postcss-short-border            | prop   | y | border prop shorhand          |
+| postcss-short-size              | prop   | y | size -> width, height         |
 | postcss-shorthand-expand        | prop   | n | expand shorthand props        |
 | postcss-size                    | prop   | n | use short-size                |
-| postcss-short-size              | prop   | y | size -> width, height         |
 | postcss-strip-units             | prop   | n | strip unit from prop          |
 | postcss-transform-shortcut      | prop   | n | nice transform syntax         |
 | postcss-triangle                | prop   | y | easy triangles                |
@@ -156,16 +156,17 @@ biased towards:
 | postcss-atroot                  | sel    | y | @at-root                      |
 | postcss-bem                     | sel    | n | BEM selectors                 |
 | postcss-class-prefix            | sel    | y | namespace selectors           |
-| postcss-custom-selectors        | sel    |   |                               |
+| postcss-custom-selectors        | sel    | y | named selector groups         |
 | postcss-fakeid                  | sel    | n | #foo -> [id="foo"]            |
 | postcss-focus                   | sel    | n | :hover += :focus              |
 | postcss-host                    | sel    | n | shadow DOM :host              |
 | postcss-increase-specificity    | sel    | n | use class-prefix instead      |
 | postcss-input-style             | sel    | n |                               |
-| postcss-nested                  | sel    |   | nested selectors              |
+| postcss-nested                  | sel    | y | nested selectors              |
+| postcss-nesting                 | sel    | n | prefer nested                 |
 | postcss-pseudo-class-any-link   | sel    | n | add :any-link                 |
 | postcss-pseudo-class-enter      | sel    | n | :focus + :hover = :enter      |
-| postcss-quantity-queries        | sel    |   | at-least, at-most, between... |
+| postcss-quantity-queries        | sel    | y | at-least, at-most, between... |
 | postcss-scopify                 | sel    | n | use class-prefix instead      |
 | postcss-selector-matches        | sel    | y | add :matches()                |
 | postcss-selector-not            | sel    | y | add :not                      |
@@ -194,7 +195,7 @@ categories:
 - [X] meta     -- reporting / linting / minification
 - [X] mq       -- media queries
 - [X] prop     -- properties
-- [ ] sel      -- selectors
+- [X] sel      -- selectors
 - [ ] text
 - [ ] url      -- deal with url() includes
 
