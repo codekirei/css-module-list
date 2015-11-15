@@ -31,6 +31,32 @@ Modules:
 [simple-extend](https://github.com/davidtheclark/postcss-simple-extend) |
 [simple-vars](https://github.com/postcss/postcss-simple-vars)
 
+**@at-root**
+
+Rules nested inside `@at-root` are fully un-nested.
+Especially useful with mixins.
+
+```css
+// before
+.foo {
+  background: red;
+  @at-root {
+    .bar {
+      background: blue;
+    }
+  }
+}
+
+// after
+.foo {
+  background: red;
+}
+.bar {
+  background: blue;
+}
+```
+
+
 ---
 ### Color
 
