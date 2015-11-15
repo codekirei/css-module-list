@@ -5,16 +5,16 @@ WIP opinionated postcss module collection
 ## Features
 
 **Sections:**
-[@ Rules]() |
-[Color](#Color) |
-[Compatibility](#Compatibility) |
-[Functions](#Functions) |
-[Layout](#Layout) |
-[Properties](#Properties) |
-[Selectors](#Selectors) |
-[Shorthand](#Shorthand) |
-[SVG](#SVG) |
-[Text](#Text)
+[@ Rules](#-rules) |
+[Color](#color) |
+[Compatibility](#compatibility) |
+[Functions](#functions) |
+[Layout](#layout) |
+[Properties](#properties) |
+[Selectors](#selectors) |
+[Shorthand](#shorthand) |
+[SVG](#svg) |
+[Text](#text)
 
 ---
 ### @ Rules
