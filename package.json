@@ -1,0 +1,21 @@
+{
+  "name": "kirei-css-generator",
+  "version": "0.1.0",
+  "description": "static site generator for kirei-css",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codekirei/kirei-css.git"
+  },
+  "author": "Jacob Blakely (code kirei)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codekirei/kirei-css/issues"
+  },
+  "homepage": "https://github.com/codekirei/kirei-css#readme"
+}
