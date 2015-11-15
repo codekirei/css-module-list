@@ -120,36 +120,38 @@ biased towards:
 | postcss-select                  | meta   | n | filter selectors              |
 | postcss-single-charset          | meta   | n | single @charset declaration   |
 | postcss-style-guide             | meta   | y | auto-generate style guide     |
-| css-mqpacker                    | mq     |   |                               |
-| mq4-hover-shim                  | mq     |   |                               |
-| postcss-custom-media            | mq     |   |                               |
+| css-mqpacker                    | mq     | n | cleancss does this            |
+| mq4-hover-shim                  | mq     | n | support @media (hover)        |
+| postcss-custom-media            | mq     | n | css-style vars                |
 | postcss-media-minmax            | mq     | y | add <= and >=                 |
 | postcss-media-variables         | mq     | n | vars in mqs                   |
 | postcss-mq-keyframes            | mq     | n | move keyframes out of MQs     |
-| postcss-reverse-media           | mq     |   |                               |
-| postcss-alias                   | prop   |   | alias props                   |
-| postcss-apply                   | prop   |   | custom props                  |
+| postcss-reverse-media           | mq     | n | more @media logic             |
+| postcss-alias                   | prop   | y | alias props                   |
+| postcss-apply                   | prop   | n | prefer define-property        |
 | postcss-autoreset               | prop   | n | reset each selector           |
-| postcss-border                  | prop   |   |                               |
-| postcss-calc                    | prop   |   |                               |
-| postcss-circle                  | prop   |   | shorthand for circle          |
+| postcss-border                  | prop   | n | prefer shorthand-border       |
+| postcss-short-border            | prop   | y | border prop shorhand          |
+| postcss-calc                    | prop   | y | eval calc when possible       |
+| postcss-circle                  | prop   | y | shorthand for circle          |
 | postcss-crip                    | prop   | n | many shorhand props           |
 | postcss-currency                | prop   | n | currencty name -> symbol      |
-| postcss-custom-properties       | prop   |   |                               |
+| postcss-custom-properties       | prop   | n | css vars                      |
 | postcss-default-unit            | prop   | n | add specified unit to nums    |
-| postcss-define-property         | prop   |   | custom props                  |
+| postcss-define-property         | prop   | n | prefer mixins                 |
 | postcss-easings                 | prop   | y | better easing names           |
 | postcss-logical-properties      | prop   | n | left/right -> start/end (LTR) |
 | postcss-modular-scale           | prop   | y | ms()                          |
-| postcss-nested-props            | prop   |   | nested properties             |
+| postcss-nested-props            | prop   | y | nested properties             |
 | postcss-property-lookup         | prop   | y | lookup sibling prop           |
 | postcss-pseudo-content-insert   | prop   | n | auto-insert content: ''       |
 | postcss-pseudo-elements-content | prop   | n | auto-insert content: ''       |
 | postcss-shorthand-expand        | prop   | n | expand shorthand props        |
-| postcss-size                    | prop   |   |                               |
-| postcss-strip-units             | prop   |   |                               |
-| postcss-transform-shortcut      | prop   |   |                               |
-| postcss-triangle                | prop   |   |                               |
+| postcss-size                    | prop   | n | use short-size                |
+| postcss-short-size              | prop   | y | size -> width, height         |
+| postcss-strip-units             | prop   | n | strip unit from prop          |
+| postcss-transform-shortcut      | prop   | n | nice transform syntax         |
+| postcss-triangle                | prop   | y | easy triangles                |
 | postcss-all-link-colors         | sel    | n | a:visited/focus/hover/active  |
 | postcss-atroot                  | sel    | y | @at-root                      |
 | postcss-bem                     | sel    | n | BEM selectors                 |
@@ -190,8 +192,8 @@ categories:
 - [X] image
 - [X] layout
 - [X] meta     -- reporting / linting / minification
-- [ ] mq       -- media queries
-- [ ] prop     -- properties
+- [X] mq       -- media queries
+- [X] prop     -- properties
 - [ ] sel      -- selectors
 - [ ] text
 - [ ] url      -- deal with url() includes
@@ -215,6 +217,8 @@ categories:
 - svg sprite sheet?
 
 - http://soqr.fr/testsvg/svg-inside-img.php
+
+- mq setup
 
 - inlining urls vs separate HTTP requests:
   - converting an image to base64 significantly increases filesize
