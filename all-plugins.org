@@ -170,13 +170,13 @@ biased towards:
 | postcss-scopify                 | sel    | n | use class-prefix instead      |
 | postcss-selector-matches        | sel    | y | add :matches()                |
 | postcss-selector-not            | sel    | y | add :not                      |
-| font-magician                   | text   |   |                               |
-| postcss-font-pack               | text   |   |                               |
-| postcss-font-variant            | text   |   |                               |
-| postcss-fontpath                | text   |   |                               |
-| postcss-responsive-type         | text   |   |                               |
-| postcss-short-font-size         | text   |   |                               |
-| postcss-short-text              | text   |   |                               |
+| postcss-font-magician           | text   | y | incredible font declaration   |
+| postcss-font-pack               | text   | n | restrict font usage           |
+| postcss-font-variant            | compat | n | font variant props            |
+| postcss-fontpath                | text   | n | prefer font-magician          |
+| postcss-responsive-type         | text   | y | smart font sizing             |
+| postcss-short-font-size         | text   | n | add line-height to font-size  |
+| postcss-short-text              | text   | n | prefer a mixin                |
 | postcss-assets                  | url    |   |                               |
 | postcss-assets-rebase           | url    |   |                               |
 | postcss-copy-assets             | url    |   |                               |
