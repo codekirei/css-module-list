@@ -177,27 +177,14 @@ biased towards:
 | postcss-responsive-type         | text   | y | smart font sizing             |
 | postcss-short-font-size         | text   | n | add line-height to font-size  |
 | postcss-short-text              | text   | n | prefer a mixin                |
-| postcss-assets                  | url    |   |                               |
-| postcss-assets-rebase           | url    |   |                               |
-| postcss-copy-assets             | url    |   |                               |
-| postcss-data-packer             | url    |   |                               |
+| postcss-assets                  | url    | n | prefer gulp-rev               |
+| postcss-assets-rebase           | url    | n | prefer gulp                   |
+| postcss-copy-assets             | url    | n | prefer gulp                   |
+| postcss-data-packer             | url    | n | combine URL rules             |
 | postcss-image-inliner           | url    | n | b64 increases file size       |
-| postcss-url                     | url    |   |                               |
-| postcss-urlrev                  | url    |   |                               |
+| postcss-url                     | url    | n | prefer gulp                   |
+| postcss-urlrev                  | url    | n | prefer gulp-rev               |
 |---------------------------------+--------+---+-------------------------------|
-
-categories:
-- [X] color
-- [X] compat   -- browser compatibility
-- [X] fund     -- fundamental language functionality
-- [X] image
-- [X] layout
-- [X] meta     -- reporting / linting / minification
-- [X] mq       -- media queries
-- [X] prop     -- properties
-- [X] sel      -- selectors
-- [ ] text
-- [ ] url      -- deal with url() includes
 
 // rules to write
 - postcss-meta-charset
