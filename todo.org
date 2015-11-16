@@ -1,0 +1,7 @@
+* markup
+- [ ] create tree from folder hierarchy in blocks
+- [ ] parse front matter of each block
+- [ ] parse markdown of each block
+- [ ] render to jade with frontmatter
+- [ ] concat all into one big string
+- [ ] inject into html (gulp-regex-replace / gulp-inject-string / gulp-inject)
