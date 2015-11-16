@@ -3,42 +3,66 @@
 //----------------------------------------------------------
 // modules
 //----------------------------------------------------------
+// node
+const path = require('path')
+const util = require('util')
+
 // npm
 const gulp = require('gulp')
 const jade = require('jade')
 const md = require('gulp-markdown')
 const fm = require('gulp-front-matter')
 const through = require('through2')
+const merge = require('lodash.merge')
 
 //----------------------------------------------------------
 // logic
 //----------------------------------------------------------
-function logger() {
+let forest = {}
+
+// plant a tree
+function plant() {
   return through.obj((file, _, cb) => {
-    function formatter(key, val) {
-      if (key === '_contents') {
-        return file.contents.toString()
-      }
-      if (key === 'stat') return
-      return val
+    // grab content string
+    const content = file.contents.toString()
+
+    // file names
+    const longName = file.path
+    const name = path.basename(longName)
+    const shortName = path.basename(name, path.extname(name))
+
+    // build tree
+    const tree = {}
+    const heading = file.relative
+      .replace(name, '')
+      .replace(path.sep, '')
+    if (heading.length) {
+      tree[heading] = {}
+      tree[heading][shortName] = content
+    } else {
+      tree[shortName] = content
     }
-    console.log(JSON.stringify(file, formatter, 2))
-    return cb(null, file)
+
+    // merge tree into forest
+    merge(forest, tree)
+    // merge(this, tree)
+    cb()
   })
 }
 
-function blocks() {
+// grow a forest
+function grow() {
   return gulp.src('source/markup/blocks/**/*.md')
     .pipe(fm())
     .pipe(md())
-    .pipe(logger())
-    .pipe(gulp.dest('dist'))
+    .pipe(plant())
 }
 
-function tree() {
-  let treeObj = {}
-  gulp.src('source/markup/blocks/**/*.md')
+// log the forest
+function log(cb) {
+  console.log(forest)
+  cb()
 }
 
-gulp.task(blocks)
-gulp.task('default', blocks)
+gulp.task(grow)
+gulp.task('default', gulp.series(grow, log))
