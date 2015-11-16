@@ -9,7 +9,7 @@ const util = require('util')
 
 // npm
 const gulp = require('gulp')
-const jade = require('jade')
+const jade = require('gulp-jade')
 const md = require('gulp-markdown')
 const fm = require('gulp-front-matter')
 const through = require('through2')
@@ -19,6 +19,7 @@ const merge = require('lodash.merge')
 // logic
 //----------------------------------------------------------
 let forest = {}
+let html = ''
 
 // plant a tree
 function plant() {
@@ -45,12 +46,11 @@ function plant() {
 
     // merge tree into forest
     merge(forest, tree)
-    // merge(this, tree)
     cb()
   })
 }
 
-// grow a forest
+// grow the forest
 function grow() {
   return gulp.src('source/markup/blocks/**/*.md')
     .pipe(fm())
@@ -58,11 +58,56 @@ function grow() {
     .pipe(plant())
 }
 
+function appendToHtml(cb) {
+  return through.obj((file, _, cb) => {
+    html += file.contents.toString()
+    console.log('test1')
+    return cb()
+  })
+}
+
+// apply jade template
+function applyTemplate(val, key) {
+  return gulp.src('source/markup/templates/block.jade')
+    .pipe(jade({locals: {
+      header: key
+    }}))
+    .pipe(appendToHtml())
+}
+
+// recursively applyTemplate
+function applyTemplates(obj) {
+  Object.keys(obj).map(key => {
+    const val = obj[key]
+    return typeof val === 'object'
+      ? applyTemplates(val)
+      : applyTemplate(val, key)
+  })
+}
+
+function templates(cb) {
+  // applyTemplates(forest)
+  // cb()
+  return cb(applyTemplates(forest))
+}
+
 // log the forest
-function log(cb) {
+function logF(cb) {
   console.log(forest)
   cb()
 }
 
+// log html
+function logH(cb) {
+  console.log(html)
+  console.log('test2')
+  cb()
+}
+
 gulp.task(grow)
-gulp.task('default', gulp.series(grow, log))
+gulp.task('default', gulp.series(
+  grow,
+  templates,
+  logH
+  // cb => cb(applyTemplates(forest))
+))
